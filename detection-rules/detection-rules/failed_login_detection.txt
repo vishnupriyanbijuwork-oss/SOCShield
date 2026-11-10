@@ -1,0 +1,38 @@
+SOCShield - Detection Rule 001
+
+RULE NAME: Multiple Failed Login Attempts
+
+RULE ID: SOC-001
+
+CATEGORY: Authentication Monitoring
+
+DESCRIPTION:
+Detect repeated unsuccessful login attempts
+from the same source IP.
+
+EVENT:
+Failed login attempts.
+
+CONDITION:
+5 or more failed attempts from the same
+source IP within 5 minutes.
+
+SEVERITY:
+Medium (initial triage priority; validate with context)
+
+ALERT:
+Multiple failed login attempts detected.
+
+INVESTIGATION:
+1. Identify source IP.
+2. Identify targeted username(s).
+3. Check event timestamps.
+4. Check whether a successful login followed.
+5. Check whether the source is expected/authorized.
+6. Record findings for the investigation team.
+
+EXPECTED RESULT:
+Generate an alert when the illustrative condition is met.
+
+STATUS:
+Design example only; not an executable SIEM rule.
